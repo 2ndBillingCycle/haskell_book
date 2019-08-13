@@ -1,0 +1,8 @@
+1) T
+\x.xxx
+
+2) F
+Alpha-equivalent to omega
+
+3) T
+zzz

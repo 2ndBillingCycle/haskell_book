@@ -1,0 +1,12 @@
+1) B
+\xy.xz
+\x.(\y.xz)
+[x := m]
+\m.(\y.mz)
+[y := n]
+\m.(\n.mz)
+\mn.mz
+
+2) C
+
+3) B

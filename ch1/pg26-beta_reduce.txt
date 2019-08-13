@@ -1,0 +1,50 @@
+1) (\abc.cba)zz(\wv.w)
+[z := x]
+(\abc.cba)xz(\wv.w)
+(\c.czx)(\wv.w)
+[c := (\wv.w)]
+(\wv.w)zx
+\v.x
+x
+[x := z]
+z
+
+2) (\x.\y.xyy)(\a.a)b
+(\y.(\a.a)yy)b
+(\y.yy)b
+bb
+
+3) (\z.z)(\z.zz)(\z.zy)
+[z := x]
+(\x.x)(\z.zz)(\z.zy)
+[z := w]
+(\x.x)(\w.ww)(\z.zy)
+(\w.ww)(\z.zy)
+(\z.zy)(\z.zy)
+(\z.zy)y
+yy
+
+5) (\x.\y.xyy)(\y.y)y
+[x := z]
+[y := w]
+[y := v]
+(\z.\w.zww)(\v.v)y
+(\w.(\v.v)ww)y
+(\w.ww)y
+yy
+
+6) (\x.\y.xyy)(\y.y)y
+(\x.\z.xzz)(\w.w)y
+(\z.(\w.w)zz)y
+(\z.zz)y
+yy
+
+7)
+(\xyz.xz(yz))(\x.z)(\x.a)
+(\abc.ac(bc))(\d.e)(\f.g)
+(\bc.(\d.e)c(bc))(\f.g)
+(\bc.e(bc))(\f.g)
+\c.e((\f.g)c)
+\c.e(g)
+\c.eg
+\z.za
