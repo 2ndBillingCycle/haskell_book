@@ -14,6 +14,7 @@ z
 (\y.yy)b
 bb
 
+// Originally, I skipped #3 and wrote in #4 instead as #3, but in light of alpha-equivalence, it remains the same
 3) (\z.z)(\z.zz)(\z.zy)
 [z := x]
 (\x.x)(\z.zz)(\z.zy)
@@ -24,6 +25,16 @@ bb
 (\z.zy)y
 yy
 
+4) (\z.z)(\z.zz)(\z.zy)
+[z := x]
+[z := w]
+(\x.x)(\w.ww)(\z.zy)
+(\w.ww)(\z.zy)
+(\z.zy)(\z.zy)
+(\z.zy)y
+yy
+// Also, just realized the hint indeed hints at #4 being alpha-equivalent to #3.
+
 5) (\x.\y.xyy)(\y.y)y
 [x := z]
 [y := w]
@@ -33,11 +44,21 @@ yy
 (\w.ww)y
 yy
 
+// I also managed to do #5 twice, without realizing it
 6) (\x.\y.xyy)(\y.y)y
 (\x.\z.xzz)(\w.w)y
 (\z.(\w.w)zz)y
 (\z.zz)y
 yy
+
+6')
+(\a.aa)(\b.ba)c
+(\a.aa)(\b.bc)d
+(\b.bc)(\b.bc)d
+((\b.bc)c)d
+(cc)d
+ccd
+aac
 
 7)
 (\xyz.xz(yz))(\x.z)(\x.a)
