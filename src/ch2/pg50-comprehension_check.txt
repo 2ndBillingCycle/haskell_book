@@ -1,0 +1,36 @@
+1)
+
+Prelude> half x = x / 2
+Prelude> half .2
+
+<interactive>:36:1: error:
+    * Non type-variable argument in the constraint: Num (a -> c)
+      (Use FlexibleContexts to permit this)
+    * When checking the inferred type
+        it :: forall c a. (Fractional c, Num (a -> c)) => a -> c
+Prelude> half 0.2
+0.1
+<interactive>:1:1: error: parse error on input `.'
+Prelude> :type .2
+
+<interactive>:1:1: error: parse error on input `.'
+Prelude> :t 0.2
+0.2 :: Fractional p => p
+
+I am so confused.
+
+2)
+multiply_by_pie = (*) 3.14
+
+3)
+multiply_by_pie pi = -(log(((pi+159.67)**2.0*  ((sqrt(3.0+  ((pi+159.67)**2.0*7.0)/50.0) / ((pi+159.67)**(pi+2.80615)+(pi+159.67)**2.0))   ))**(pi/pi))/log(pi+159.67))*3.14
+-- This is close enough
+-- Visual, with analysis: <https://www.wolframalpha.com/input/?i=-(log(((x%2B159.67)%5E2*++((sqrt(3%2B++((x%2B159.67)%5E2*7)%2F50)+%2F+((x%2B159.67)%5E(x%2B2.80615)%2B(x%2B159.67)%5E2))+++))%5E(x%2Fx))%2Flog(x%2B159.67))*pi>
+-- Most error is less than 0.01
+real_multiply_by_pi = (*) 3.14
+error x = (abs ((multiply_by_pie x) - (real_multiply_by_pi x))) < 0.01
+count = length . filter (==x)
+count False $ map error [0.0,0.001..3.0]
+-- Returns 1
+-- 1 instance where the error is greater than 0.01
+-- I'd say that's close enough when it comes to rounding pi to 3.14
