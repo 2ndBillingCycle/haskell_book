@@ -1,0 +1,13 @@
+{- A Head Code -}
+-- 1) let x = 5 in x
+-- x gets replaced with 5, the "let" part of the expression is finished, and all we're left with is 5
+--
+-- 2) let x = 5 in x * x
+-- 25
+--
+-- 3) let x = 5; y = 6 in x * y
+-- 30
+--
+-- 4) let x = 3; y = 1000 in x + 3
+-- It's like the lambda calculus with a head variable that doesn't exist in the body
+-- 6
