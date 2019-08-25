@@ -1,0 +1,17 @@
+1)
+Yes.
+
+2)
+No, unless hs is defined before the lines shown.
+
+3)
+No. Because d is a parameter of the function area,
+it is not in top-level scope, meaning it's use in
+r is impossible. A correct version would be
+
+area :: Floating d => d -> d
+area d = pi * (r * r)
+    where r = d / 2
+
+4)
+Yes, they are now. Thank you.
