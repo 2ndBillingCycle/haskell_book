@@ -1,3 +1,5 @@
+save.code-workspace
+
 .stack-work/
 haskell-project.cabal
 *~
